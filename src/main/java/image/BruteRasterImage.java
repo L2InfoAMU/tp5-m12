@@ -1,22 +1,44 @@
 package image;
 import javafx.scene.paint.Color;
+import util.Matrices;
 
 
 public class BruteRasterImage implements Image {
     int width;
     int height;
     Color color;
-    Image MyImage;
+    Color[][] image;
 
 
 
 
+//constructeur 1
     public BruteRasterImage(Color color, int width, int height)
     {
-
+// initialize an image with specified color
         this.width=width;
         this.height=height;
-        this.color=color;
+        image = new Color[width][height];
+        for(int x = 0 ; x < this.width; x++) {
+            for(int y = 0; y < this.height; y++) {
+                image[x][y] = color;       //create an image with same color
+            }
+        }
+
+    }
+//constructeur 2
+
+    public BruteRasterImage(Color[][] colors) {
+        // initialize an image with specified color
+        width = Matrices.getRowCount(colors);
+        height = Matrices.getColumnCount(colors);
+        this.image = new Color[width][height];  //initialisation de l'image
+        for(int x = 0 ; x < this.width; x++) {
+            for(int y = 0; y < this.height; y++) {
+                this.image[x][y] = colors[x][y];
+            }
+        }
+
 
     }
 
@@ -26,15 +48,15 @@ public class BruteRasterImage implements Image {
     public void createRepresentation(){}
     public void setPixelColor(Color color, int x, int y){ }
     public Color getPixelColor(int x, int y) {
-        return MyImage.getPixelColor(x,y);
+        return image[x][y];
     }
     private void setPixelsColor(Color[][] pixels){}
     private void setPixelsColor(Color color){}
     public int getWidth(){
-        return MyImage.getHeight();
+        return this.width;
     }
     public int getHeight() {
-        return MyImage.getHeight();
+        return this.height;
     }
     protected void setWidth(int width) {}
     protected void setHeight(int height) {}

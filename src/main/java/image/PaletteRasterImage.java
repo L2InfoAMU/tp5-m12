@@ -6,6 +6,8 @@ public class PaletteRasterImage implements Image{
     Color color ;
     int width;
     int height;
+    Image MyImage;
+    Pixel pixel ;
 
     public PaletteRasterImage(Color color, int width, int height) {
         this.color = color;
@@ -13,20 +15,37 @@ public class PaletteRasterImage implements Image{
         this.height = height;
     }
 
-    @Override
-    public Color getPixelColor(int x, int y) {
-        return null;
+    public PaletteRasterImage(Color[][] pixels){}
+
+
+    //methodes
+
+    public void createRepresentation() {}
+
+    public void setPixelColor(Color color, int x, int y){
+        setPixelColor(color,x,y);
     }
 
-    @Override
+    public Color getPixelColor(int x, int y){
+       return getPixelColor(x,y);
+    }
+
+    public void setPixelsColor(Color[][] pixels) {}
+
+    private void setPixelsColor(Color color) {}
+
     public int getWidth() {
-        return 0;
+        return  MyImage.getHeight();
     }
 
-    @Override
     public int getHeight() {
-        return 0;
+       return MyImage.getHeight();
     }
+
+    protected void setWidth(int width) {}
+
+    protected void setHeight(int height) {}
+
 
 
 

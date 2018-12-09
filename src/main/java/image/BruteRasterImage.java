@@ -9,21 +9,6 @@ public class BruteRasterImage implements Image {
     Image MyImage;
 
 
-    @Override
-    public Color getPixelColor(int x, int y) {
-        return null;
-    }
-
-    @Override
-    public int getWidth() {
-        return 0;
-    }
-
-    @Override
-    public int getHeight() {
-        return 0;
-    }
-
 
 
     public BruteRasterImage(Color color, int width, int height)
@@ -40,11 +25,17 @@ public class BruteRasterImage implements Image {
 
     public void createRepresentation(){}
     public void setPixelColor(Color color, int x, int y){ }
-    public Color getPixelColor(int x, int y) {}
+    public Color getPixelColor(int x, int y) {
+        return MyImage.getPixelColor(x,y);
+    }
     private void setPixelsColor(Color[][] pixels){}
     private void setPixelsColor(Color color){}
-    public int getWidth(){}
-    public int getHeight() {}
+    public int getWidth(){
+        return MyImage.getHeight();
+    }
+    public int getHeight() {
+        return MyImage.getHeight();
+    }
     protected void setWidth(int width) {}
     protected void setHeight(int height) {}
 

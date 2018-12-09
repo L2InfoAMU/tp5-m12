@@ -4,6 +4,8 @@ import util.Matrices;
 
 
 public class BruteRasterImage implements Image {
+
+    // attributs
     int width;
     int height;
     Color color;

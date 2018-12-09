@@ -2,7 +2,7 @@ package image;
 import javafx.scene.paint.Color;
 
 public class PaletteRasterImage implements Image{
-
+    // attributs
     Color color ;
     int width;
     int height;
@@ -20,7 +20,7 @@ public class PaletteRasterImage implements Image{
 
     //methodes
 
-    public void createRepresentation() {}
+    public void createRepresentation() { }
 
     public void setPixelColor(Color color, int x, int y){
         setPixelColor(color,x,y);

@@ -31,7 +31,7 @@ public class BruteRasterImage implements Image {
 //constructeur 2
 
     public BruteRasterImage(Color[][] colors) {
-        // initialize an image with specified color
+        // initialize an image from Matrice
         width = Matrices.getRowCount(colors);
         height = Matrices.getColumnCount(colors);
         this.image = new Color[width][height];  //initialisation de l'image

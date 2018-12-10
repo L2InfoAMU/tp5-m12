@@ -17,7 +17,7 @@ public class BruteRasterImage implements Image {
 //constructeur 1
     public BruteRasterImage(Color color, int width, int height)
     {
-// initialize an image with specified color
+        // initialize an image with specified color
         this.width=width;
         this.height=height;
         image = new Color[width][height];
@@ -50,19 +50,38 @@ public class BruteRasterImage implements Image {
     public void createRepresentation(){
         this.image = new Color[this.width][this.height];
     }
-    public void setPixelColor(Color color, int x, int y){ }
+
+    public void setPixelColor(Color color, int x, int y){
+       this.color= image[x][y];
+    }
+
+
     public Color getPixelColor(int x, int y) {
         return image[x][y];
     }
-    private void setPixelsColor(Color[][] pixels){}
+
+    private void setPixelsColor(Color[][] pixels){
+        width = Matrices.getRowCount(image);
+        height = Matrices.getColumnCount(image);
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                this.image[x][y] = pixels[x][y];
+            }
+        }
+    }
+
     private void setPixelsColor(Color color){}
+
     public int getWidth(){
         return this.width;
     }
+
     public int getHeight() {
         return this.height;
     }
+
     protected void setWidth(int width) {}
+
     protected void setHeight(int height) {}
 
 

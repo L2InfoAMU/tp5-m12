@@ -1,4 +1,5 @@
 package image;
 
-public class RasterImage {
+public abstract class  RasterImage {
+
 }

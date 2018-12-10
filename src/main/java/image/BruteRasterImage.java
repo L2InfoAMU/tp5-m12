@@ -43,7 +43,7 @@ public class BruteRasterImage implements Image {
         }}
        catch (Exception e){
             Matrices.requiresNonZeroDimensions(image);
-            Matrices.requiresRectangularMatrix(image);
+          //  Matrices.requiresRectangularMatrix(image);
         }
 
 

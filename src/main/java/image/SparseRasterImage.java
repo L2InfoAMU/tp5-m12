@@ -1,12 +1,8 @@
 package image;
 
-import com.sun.javafx.collections.MappingChange;
 import javafx.scene.paint.Color;
 import util.Matrices;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class SparseRasterImage extends RasterImage implements Image {

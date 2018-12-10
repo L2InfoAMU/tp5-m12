@@ -2,7 +2,9 @@ package image;
 
 import com.sun.javafx.collections.MappingChange;
 import javafx.scene.paint.Color;
+import util.Matrices;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +37,24 @@ public class SparseRasterImage extends RasterImage implements Image {
         }
     }
 
-    public SparseRasterImage(Color[][] pixels){}
+    public SparseRasterImage(Color[][] pixels){
+
+
+        width = Matrices.getRowCount(pixels);
+        height = Matrices.getColumnCount(pixels);
+        map = new HashMap<Point, Color>();
+       //initialisation de l'image
+        for(int x = 0 ; x < this.width; x++) {
+            for(int y = 0; y < this.height; y++) {
+
+                if (color!= Color.WHITE){
+                    p=new Point(x,y);
+                    map.put(p,pixels[x][y]); }
+
+            }
+        }
+
+    }
 
 
 
@@ -43,7 +62,7 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     @Override
     public void createRepresentation(){
-
+      this.map = new HashMap<Point, Color>();
     }
 
     @Override
@@ -51,7 +70,8 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return null;
+        p=new Point(x,y);
+       return map.get(p);
     }
 
     public SparseRasterImage() {

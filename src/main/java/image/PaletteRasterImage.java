@@ -1,5 +1,6 @@
 package image;
 import javafx.scene.paint.Color;
+import util.Matrices;
 
 import java.util.List;
 
@@ -8,7 +9,8 @@ public class PaletteRasterImage implements Image{
     Color color ;
     int width;
     int height;
-    int [][] MyImage;
+    Color [][] MyImage;
+    int [][] IndexColors;
     List<Color> palette;
 
     public PaletteRasterImage(Color color, int width, int height) {
@@ -32,9 +34,21 @@ public class PaletteRasterImage implements Image{
        return getPixelColor(x,y);
     }
 
-    public void setPixelsColor(Color[][] pixels) {}
+    public void setPixelsColor(Color[][] pixels) {
 
-    private void setPixelsColor(Color color) {}
+    }
+
+    private void setPixelsColor(Color color) {
+
+//get image dimensions
+        width = Matrices.getRowCount(MyImage);
+        height = Matrices.getColumnCount(MyImage);
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                this.MyImage[x][y] = color;  //load image with gived pixels
+            }
+        }
+    }
 
 
 

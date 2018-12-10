@@ -79,7 +79,7 @@ public class PaletteRasterImage implements Image{
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                this.IndexColors[x][y] = palette.indexOf(color);  //load image with gived pixels
+                this.IndexColors[x][y] = palette.indexOf(color);  //load image with gived colors
             }
         }
     }

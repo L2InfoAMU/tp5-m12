@@ -1,8 +1,25 @@
 package image;
 
-import java.util.HashMap;
+import javafx.scene.paint.Color;
 
-public class SparseRasterImage extends RasterImage  {
+public class SparseRasterImage extends RasterImage implements Image {
+
+
+
+    public SparseRasterImage(Color color, int width, int height){}
+
+    public SparseRasterImage(Color[][] pixels){}
+
+
+
+
+    @Override
+    public Color getPixelColor(int x, int y) {
+        return null;
+    }
+
+    public SparseRasterImage() {
+    }
 
     @Override
     public int getWidth() {

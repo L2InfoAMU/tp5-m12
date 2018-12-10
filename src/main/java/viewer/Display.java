@@ -26,11 +26,17 @@ public class Display implements Initializable {
 
         // TODO : rajouter la création d'une fabrique d'image pour initialiser imageFactory
 
-       // imageFactory = new RasterUniformImageFactory(200, 200, Color.RED, RasterImageType.BRUTE); //show red image
+        // imageFactory = new RasterUniformImageFactory(200, 200, Color.RED, RasterImageType.BRUTE);   //show red image
 
-     imageFactory = new RasterFlagFactory(900, 600, Color.BLUE, Color.WHITE, Color.RED, RasterImageType.BRUTE);   //create BRUTE type of Images
 
-      //  imageFactory = new RasterFlagFactory(900, 600, Color.BLUE, Color.WHITE, Color.RED, RasterImageType.PALETTE);  //Create PALETTE type of images
+                /*  Show RED WHITE BLUE Image  */
+
+           imageFactory = new RasterFlagFactory(900, 600, Color.BLUE, Color.WHITE, Color.RED, RasterImageType.BRUTE);   //create BRUTE type of Images
+
+        //   imageFactory = new RasterFlagFactory(900, 600, Color.BLUE, Color.WHITE, Color.RED, RasterImageType.PALETTE);  //Create PALETTE type of images
+
+        //   imageFactory = new RasterFlagFactory(900, 600, Color.BLUE, Color.WHITE, Color.RED, RasterImageType.SPARSE);  //Create SPARSE type of images
+
         this.image = imageFactory.makeImage();
 
         render();

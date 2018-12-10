@@ -46,11 +46,11 @@ public class PaletteRasterImage extends RasterImage implements Image  {
 
 
     //methodes
-
+    @Override
     public void createRepresentation() {
         this.indexColors = new int[this.width][this.height];
     }
-
+    @Override
     public void setPixelColor(Color color, int x, int y){
 
        // if (!palette.contains(palette.indexOf(indexColors[x][y]))){
@@ -61,7 +61,7 @@ public class PaletteRasterImage extends RasterImage implements Image  {
     public Color getPixelColor(int x, int y){
        return palette.get( indexColors[x][y]);
     }
-
+    @Override
     public void setPixelsColor(Color[][] pixels) {
 
         //get image dimensions
@@ -91,6 +91,26 @@ public class PaletteRasterImage extends RasterImage implements Image  {
     }
 
 
+    @Override
+    public int getWidth() {
+        return  this.width;
+    }
+
+    @Override
+    public int getHeight() {
+        return this.height;
+    }
+
+    @Override
+    protected void setWidth(int width) {
+        this.width=width;
+    }
+
+    @Override
+    protected void setHeight(int height) {
+        this.height=height;
+    }
+
     /*    // retourner le width
     public int getWidth() {
         return  this.width;
@@ -113,23 +133,5 @@ public class PaletteRasterImage extends RasterImage implements Image  {
     }
 */
 
-    @Override
-    public int getWidth() {
-        return  this.width;
-    }
 
-    @Override
-    public int getHeight() {
-        return this.height;
-    }
-
-    @Override
-    protected void setWidth(int width) {
-        this.width=width;
-    }
-
-    @Override
-    protected void setHeight(int height) {
-        this.height=height;
-    }
 }

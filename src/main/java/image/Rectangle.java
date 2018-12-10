@@ -13,6 +13,14 @@ public class Rectangle implements Shape {
 
     Rectangle(int x, int y, int width, int height, Color color) {
 
+        this.width=width;
+        this.height=height;
+        image = new Color[width][height];
+        for(int a = x ; a < this.width; a++) {
+            for(int b = y; b < this.height; b++) {
+                image[a][b] = color;
+            }
+        }
     }
 
 

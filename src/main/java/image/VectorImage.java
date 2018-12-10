@@ -1,6 +1,8 @@
 package image;
 
 import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class VectorImage implements Image{
@@ -14,10 +16,12 @@ public class VectorImage implements Image{
     VectorImage(List<Shape> shapes, int width, int height) {
         this.width=width;
         this.height=height;
+
         image = new Color[width][height];
         for(int x = 0 ; x < this.width; x++) {
             for(int y = 0; y < this.height; y++) {
                 //create an image with same color
+
             }
         }
     }

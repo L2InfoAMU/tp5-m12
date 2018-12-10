@@ -31,6 +31,7 @@ public class BruteRasterImage implements Image {
 //constructeur 2
 
     public BruteRasterImage(Color[][] colors) {
+       try{
         // initialize an image from Matrice
         width = Matrices.getRowCount(colors);
         height = Matrices.getColumnCount(colors);
@@ -39,6 +40,10 @@ public class BruteRasterImage implements Image {
             for(int y = 0; y < this.height; y++) {
                 this.image[x][y] = colors[x][y];
             }
+        }}
+       catch (Exception e){
+            Matrices.requiresNonZeroDimensions(image);
+            Matrices.requiresRectangularMatrix(image);
         }
 
 

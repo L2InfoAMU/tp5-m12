@@ -32,7 +32,7 @@ public class SparseRasterImage extends RasterImage implements Image {
             for(int y = 0; y < this.height; y++) {
                 if (color!= Color.WHITE){
                     p=new Point(x,y);
-                map.put(p,color); }      //create an image with same color
+                map.put(p,color); }
             }
         }
     }
@@ -43,7 +43,7 @@ public class SparseRasterImage extends RasterImage implements Image {
         width = Matrices.getRowCount(pixels);
         height = Matrices.getColumnCount(pixels);
         map = new HashMap<Point, Color>();
-       //initialisation de l'image
+
         for(int x = 0 ; x < this.width; x++) {
             for(int y = 0; y < this.height; y++) {
 
@@ -100,7 +100,7 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     @Override
     public int getWidth() {
-        return super.getWidth();
+        return 0;
     }
 
     @Override

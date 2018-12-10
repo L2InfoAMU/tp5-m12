@@ -1,13 +1,15 @@
 package image;
 import javafx.scene.paint.Color;
 
+import java.util.List;
+
 public class PaletteRasterImage implements Image{
     // attributs
     Color color ;
     int width;
     int height;
-    Image MyImage;
-    Pixel pixel ;
+    int [][] MyImage;
+    List<Color> palette;
 
     public PaletteRasterImage(Color color, int width, int height) {
         this.color = color;
@@ -34,12 +36,14 @@ public class PaletteRasterImage implements Image{
 
     private void setPixelsColor(Color color) {}
 
+
+
     public int getWidth() {
-        return  MyImage.getHeight();
+        return  this.width;
     }
 
     public int getHeight() {
-       return MyImage.getHeight();
+       return this.height;
 
     }
 

@@ -40,11 +40,18 @@ public class PaletteRasterImage implements Image{
 
     public int getHeight() {
        return MyImage.getHeight();
+
     }
 
-    protected void setWidth(int width) {}
 
-    protected void setHeight(int height) {}
+    protected void setWidth(int width) {
+
+        this.width=width;
+    }
+
+    protected void setHeight(int height) {
+        this.height=height;
+    }
 
 
 

@@ -66,7 +66,9 @@ public class SparseRasterImage extends RasterImage implements Image {
     }
 
     @Override
-    public void setPixelColor(Color color, int x, int y) {}
+    public void setPixelColor(Color color, int x, int y) {
+
+    }
 
     @Override
     public Color getPixelColor(int x, int y) {
@@ -74,7 +76,24 @@ public class SparseRasterImage extends RasterImage implements Image {
        return map.get(p);
     }
 
-    public SparseRasterImage() {
+
+    public void setPixelsColor(Color[][] pixels){
+
+        width = Matrices.getRowCount(pixels);
+        height = Matrices.getColumnCount(pixels);
+        map = new HashMap<Point, Color>();
+        //initialisation de l'image
+        for(int x = 0 ; x < this.width; x++) {
+            for(int y = 0; y < this.height; y++) {
+
+                if (color!= Color.WHITE){
+
+                    p=new Point(x,y);
+
+                    map.put(p,pixels[x][y]); }
+
+            }
+        }
     }
 
     @Override

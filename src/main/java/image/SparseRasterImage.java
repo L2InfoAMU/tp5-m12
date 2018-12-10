@@ -67,7 +67,9 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     @Override
     public void setPixelColor(Color color, int x, int y) {
+        p=new Point(x,y);
 
+        map.put(p,color);
     }
 
     @Override

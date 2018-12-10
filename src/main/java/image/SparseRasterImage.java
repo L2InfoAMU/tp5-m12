@@ -96,21 +96,21 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     @Override
     public int getWidth() {
-        return 0;
+       return  this.width;
     }
 
     @Override
     public int getHeight() {
-        return super.getHeight();
+        return this.height;
     }
 
     @Override
     protected void setWidth(int width) {
-        super.setWidth(width);
+        this.width=width;
     }
 
     @Override
     protected void setHeight(int height) {
-        super.setHeight(height);
+       this.height=height;
     }
 }
